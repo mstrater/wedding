@@ -1,0 +1,32 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Patrick Hand', sans-serif;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+#container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+#more_details {
+	font-size: 5vh;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#save_the_date {
+	object-fit: contain;
+	height: 90vh;
+}
