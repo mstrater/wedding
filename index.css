@@ -32,30 +32,11 @@ a {
 	height: 150px;
 }
 
-/* 274 x 274 */
-/* 274/2 = 137*/
-#murphy-top {
+#murphy {
 	position: fixed;
+	/* Start offscreen */
 	top: -274px;
-	left: calc(50vw - 137px);
-	rotate: 180deg;
-}
-#murphy-right {
-	position: fixed;
-	right: -274px;;
-	top: calc(50vh - 137px);
-	rotate: -90deg;
-}
-#murphy-bottom {
-	position: fixed;
-	bottom: -274px;;
-	left: calc(50vw - 137px);
-}
-#murphy-left {
-	position: fixed;
-	left: -274px;;
-	top: calc(50vh - 137px);
-	rotate: 90deg;
+	left: -274px;
 }
 .murphy-animation {
 	animation-duration: 3s;
