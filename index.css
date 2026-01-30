@@ -7,7 +7,11 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	font-size: max(3vw, 22px);
+	font-size: 20px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0.25rem;
 }
 
 a {
@@ -24,8 +28,9 @@ a {
 	flex-direction: column;
 	align-items: center;
 }
-#container p {
-	margin: 0 1rem 0.8rem 1rem;
+
+#details {
+	margin: 0 1rem;
 }
 
 #spacer {
@@ -52,4 +57,18 @@ a {
 		transform: translate(0, -274px);
 		animation-timing-function: ease-in;
 	}
+}
+
+#anim-toggle {
+	/* Unhidden in JS */
+	display: none;
+	position:fixed;
+	right: 0.25rem;
+	bottom: 0.25rem;
+	z-index: 99;
+	background: #fff;
+	color: #999;
+	border: 2px solid #999;
+	border-radius: 8px;
+	font-size: 0.75rem;
 }

@@ -1,11 +1,30 @@
+let disableAnim = localStorage.getItem('disableAnim') ?? false;
+const animToggleButton = document.querySelector('#anim-toggle');
+const setAnimToggleText = () => {
+	animToggleButton.innerHTML = disableAnim ? 'Enable Animation' : 'Disable Animation';
+};
+
+// Show the animation toggle button and set it's text
+animToggleButton.style.display = 'block';
+setAnimToggleText();
+animToggleButton.addEventListener('click', (e) => {
+	disableAnim = !disableAnim;
+	if (disableAnim) {
+		localStorage.setItem('disableAnim', 'true');
+	} else {
+		localStorage.removeItem('disableAnim');
+		startMurphyAnimation();
+	}
+	setAnimToggleText();
+});
+
 const murphy = document.querySelector('#murphy');
 const murphyAnimClass = 'murphy-animation';
 
-const randomWait = () => 1000 + Math.random() * 5000; // Random wait between 1 and 6 secs
 // Listen for end of animation in order to queue up another after a random pause
 murphy.addEventListener('animationend', (e) => {
 	murphy.classList.remove(murphyAnimClass);
-	setTimeout(startMurphyAnimation, randomWait()) // Random wait between 1 and 6 secs
+	setTimeout(startMurphyAnimation, 2000 + Math.random() * 3000) // Random wait between 2 and 5 secs
 });
 
 // 0 top
@@ -27,6 +46,9 @@ const randomOffset = (widthBool) => {
 // Murphy image is 274 x 274
 // 274/2 = 137
 const startMurphyAnimation = () => {
+	if (disableAnim) {
+		return;
+	}
 	const dir = getRandDir();
 	switch (dir) {
 		// TODO: This could probably all be combined into one case that just uses math
@@ -71,6 +93,6 @@ const startMurphyAnimation = () => {
 	murphy.classList.add(murphyAnimClass);
 };
 // Random delay for first animation
-setTimeout(startMurphyAnimation, randomWait())
+setTimeout(startMurphyAnimation, 500 + Math.random() * 3000)
 
 console.log("Hi Kyle! :)");
